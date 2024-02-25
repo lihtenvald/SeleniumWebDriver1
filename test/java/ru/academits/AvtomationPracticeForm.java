@@ -15,6 +15,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class AvtomationPracticeForm {
@@ -72,8 +73,9 @@ public class AvtomationPracticeForm {
         driver.findElement(By.xpath("//div[@id='hobbiesWrapper']//div[2]//div[2]/label")).click();
         driver.findElement(By.xpath("//div[@id='hobbiesWrapper']//div[2]//div[1]/label")).click();
 
+        File file = new File("src/file.txt");
+        String filePath = file.getAbsolutePath();
         WebElement fileInput = driver.findElement(By.cssSelector("input[type=file]"));
-        String filePath = "/Users/Valentina/Desktop/file.txt";
         fileInput.sendKeys(filePath);
 
         driver.findElement(By.id("currentAddress")).sendKeys("Obskaya 111");
